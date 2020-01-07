@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
                 username.error = getString(loginState.usernameError)
             }
             if (loginState.passwordError != null) {
-               password.error = getString(loginState.passwordError)
+                password.error = getString(loginState.passwordError)
             }
         })
 
