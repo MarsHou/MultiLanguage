@@ -23,6 +23,9 @@ object LanguageManager {
     private var currentLocale: Locale? = null
 
 
+    /**
+     * Initial system locale.
+     */
     fun initSystemLocale(locale: Locale? = null) {
         systemLocale = locale
             ?: if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -32,6 +35,9 @@ object LanguageManager {
             }
     }
 
+    /**
+     * Configuration changed of application listener.
+     */
     fun onConfigurationChangedOfApplication(config: Configuration) {
         initSystemLocale(
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -42,6 +48,9 @@ object LanguageManager {
         )
     }
 
+    /**
+     * Obtain current locale.
+     */
     fun currentLocale(): Locale {
         return currentLocale ?: if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             LocaleList.getDefault().get(0)
@@ -50,6 +59,9 @@ object LanguageManager {
         }
     }
 
+    /**
+     * When open activity be setting language.
+     */
     fun setLanguageForCreateActivity(context: Context) {
         if (LANGUAGE_SYSTEM == getLanguageForSp(context)) {
             currentLocale = systemLocale
@@ -59,6 +71,10 @@ object LanguageManager {
     }
 
 
+    /**
+     * Manual select language.
+     * @param language (#LanguageManager.LANGUAGE_SYSTEM or LanguageManager.LANGUAGE_XXX)
+     */
     fun selectLanguage(context: Context, language: String): Boolean {
         if (language == getLanguageForSp(context)) {
             return false
@@ -68,6 +84,9 @@ object LanguageManager {
         return true
     }
 
+    /*
+     * Setting language.
+     */
     private fun setLanguage(context: Context, language: String) {
 
         val configuration = context.resources.configuration
@@ -95,6 +114,9 @@ object LanguageManager {
         context.resources.updateConfiguration(configuration, context.resources.displayMetrics)
     }
 
+    /*
+     *  Setting language for SharedPreferences
+     */
     private fun setLanguageForSP(context: Context, language: String) {
         val sharedPreferences = getCurrentSharedPreferences(context)
         val editor = sharedPreferences.edit()
@@ -102,6 +124,9 @@ object LanguageManager {
         editor.apply()
     }
 
+    /*
+     *  Obtain language for SharedPreferences
+     */
     fun getLanguageForSp(context: Context): String {
         return getCurrentSharedPreferences(context).getString(LANGUAGE_KEY, LANGUAGE_SYSTEM)
             ?: LANGUAGE_SYSTEM
