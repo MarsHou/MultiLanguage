@@ -3,6 +3,7 @@ package com.mars.multilanguage.utils
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Build
 import android.os.LocaleList
 import java.util.*
@@ -11,7 +12,9 @@ import java.util.*
  * Created by Mars on 2020-01-09 16:36.
  */
 object LanguageManager {
+    private const val LANGUAGE_FILE = "language"
     private const val LANGUAGE_KEY = "language_key"
+
     const val LANGUAGE_SYSTEM = "language_system"
     const val LANGUAGE_ENGLISH = "language_english"
     const val LANGUAGE_CHINESE = "language_chinese"
@@ -27,6 +30,16 @@ object LanguageManager {
             } else {
                 Locale.getDefault()
             }
+    }
+
+    fun onConfigurationChangedOfApplication(config: Configuration) {
+        initSystemLocale(
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                config.locales.get(0)
+            } else {
+                config.locale
+            }
+        )
     }
 
     fun currentLocale(): Locale {
@@ -95,7 +108,7 @@ object LanguageManager {
     }
 
     private fun getCurrentSharedPreferences(context: Context): SharedPreferences {
-        return context.getSharedPreferences("language", MODE_PRIVATE)
+        return context.getSharedPreferences(LANGUAGE_FILE, MODE_PRIVATE)
     }
 
 }

@@ -16,12 +16,6 @@ class MLApplication : Application() {
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        LanguageManager.initSystemLocale(
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                newConfig.locales.get(0)
-            } else {
-                newConfig.locale
-            }
-        )
+        LanguageManager.onConfigurationChangedOfApplication(newConfig)
     }
 }
