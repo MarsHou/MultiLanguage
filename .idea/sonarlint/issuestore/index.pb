@@ -1,0 +1,27 @@
+
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+s
+Capp/src/main/java/com/mars/multilanguage/ui/login/LoginViewModel.kt,5/d/5dd2c1c32397dd0df1e424712a2b7bef2f5cfd18
+s
+Capp/src/main/java/com/mars/multilanguage/data/model/LoggedInUser.kt,c/d/cd924c4dcdbfc08109a39803d5ef12ab422fb233
+p
+@app/src/main/java/com/mars/multilanguage/data/LoginDataSource.kt,1/9/19edd5f54ba5e4e87bc651671c7e99b8eacfce9f
+g
+7app/src/main/java/com/mars/multilanguage/data/Result.kt,b/7/b7214aa4f1f32589990654c3007b9dbed8b14ae6
+p
+@app/src/main/java/com/mars/multilanguage/data/LoginRepository.kt,e/9/e96790eb5cbe5faa8ccc80f8aa59982ff4f2c813
+s
+Capp/src/main/java/com/mars/multilanguage/ui/login/LoginFormState.kt,b/e/be403d12265dbfe6f9cce76dda25240ee2f8ab55
+z
+Japp/src/main/java/com/mars/multilanguage/ui/login/LoginViewModelFactory.kt,7/7/770e3867cc853860c626200a96d2402cd54d7d5b
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+o
+?app/src/main/java/com/mars/multilanguage/utils/MLApplication.kt,a/2/a2c84feb3e0533779ff9331343518b9c6e1660e9
+h
+8app/src/main/java/com/mars/multilanguage/BaseActivity.kt,7/4/7457c08e28fa98679eb80b58394b2d1945f904d3
+r
+Bapp/src/main/java/com/mars/multilanguage/ui/login/LoginActivity.kt,7/3/73f056e30f880ef9d58250fb5d53bcb19ead9dae
+q
+Aapp/src/main/java/com/mars/multilanguage/utils/LanguageManager.kt,c/9/c9e84a6fefefd99f47930c92daa95d3fb5e683f4

@@ -9,4 +9,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+
+    <string name="follow_system">Follow System</string>
+    <string name="string_chinese">中文</string>
+    <string name="string_english">English</string>
 </resources>
