@@ -31,7 +31,7 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         supportActionBar?.title =
-            LanguageManager.currentLocale().language.toUpperCase() + " " + LanguageManager.getLanguageForSp(
+            LanguageManager.currentLocale().language.toUpperCase()+"-"+LanguageManager.currentLocale().displayCountry.toUpperCase() + " " + LanguageManager.getLanguageForSp(
                 this
             ).replace("_", " ").toUpperCase()
         val username = findViewById<EditText>(R.id.username)
